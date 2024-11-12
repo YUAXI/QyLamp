@@ -26,37 +26,132 @@ void loop() {
       // 判断是否收到 "wake"
       if (receivedString == "wake") {
         digitalWrite(2, LOW);
-        delay(20);
+        delay(200);
         digitalWrite(2, HIGH);           
-        Serial.println("response wake");
+        Serial.println(receivedString);
       } 
       else if (receivedString == "on"){
         digitalWrite(2, LOW);         
-        Serial.println("response turn on");
+        Serial.println(receivedString);
       }
       else if (receivedString == "off"){
         digitalWrite(2, HIGH);        
-        Serial.println("response turn off");
+        Serial.println(receivedString);
       }
-      else if (receivedString == "1"){
+      else if (receivedString == "red"){
         digitalWrite(2, LOW);
-        delay(20);
+        delay(200);
         digitalWrite(2, HIGH);               
-        Serial.println("response red");
+        Serial.println(receivedString);
       }
-      else if (receivedString == "2"){
+      else if (receivedString == "orange"){
         digitalWrite(2, LOW);
-        delay(20);
+        delay(200);
         digitalWrite(2, HIGH);                 
-        Serial.println("response white");
+        Serial.println(receivedString);
       }
-      else if (receivedString == "3"){
+      else if (receivedString == "yellow"){
         digitalWrite(2, LOW);
-        delay(20);
+        delay(200);
         digitalWrite(2, HIGH);           
-        Serial.println("response blue");
+        Serial.println(receivedString);
       }
-
+      else if (receivedString == "green"){
+        digitalWrite(2, LOW);
+        delay(200);
+        digitalWrite(2, HIGH);           
+        Serial.println(receivedString);
+      }
+    else if (receivedString == "cyan"){
+        digitalWrite(2, LOW);
+        delay(200);
+        digitalWrite(2, HIGH);           
+        Serial.println(receivedString);
+      }
+      else if (receivedString == "blue"){
+        digitalWrite(2, LOW);
+        delay(200);
+        digitalWrite(2, HIGH);           
+        Serial.println(receivedString);
+      }
+      else if (receivedString == "purple"){
+        digitalWrite(2, LOW);
+        delay(200);
+        digitalWrite(2, HIGH);           
+        Serial.println(receivedString);
+      }
+      else if (receivedString == "white"){
+        digitalWrite(2, LOW);
+        delay(200);
+        digitalWrite(2, HIGH);           
+        Serial.println(receivedString);
+      }
+      else if (receivedString == "pink"){
+        digitalWrite(2, LOW);
+        delay(200);
+        digitalWrite(2, HIGH);           
+        Serial.println(receivedString);
+      }
+      else if (receivedString == "darker"){
+        digitalWrite(2, LOW);
+        delay(200);
+        digitalWrite(2, HIGH);           
+        Serial.println(receivedString);
+      }
+      else if (receivedString == "brighter"){
+        digitalWrite(2, LOW);
+        delay(200);
+        digitalWrite(2, HIGH);           
+        Serial.println(receivedString);
+      }
+      else if (receivedString == "onmarquee"){
+        digitalWrite(2, LOW);
+        delay(200);
+        digitalWrite(2, HIGH);           
+        Serial.println(receivedString);
+      }
+      else if (receivedString == "offmarquee"){
+        digitalWrite(2, LOW);
+        delay(200);
+        digitalWrite(2, HIGH);           
+        Serial.println(receivedString);
+      }
+      else if (receivedString == "onbreathe"){
+        digitalWrite(2, LOW);
+        delay(200);
+        digitalWrite(2, HIGH);           
+        Serial.println(receivedString);
+      }
+      else if (receivedString == "offbreathe"){
+        digitalWrite(2, LOW);
+        delay(200);
+        digitalWrite(2, HIGH);           
+        Serial.println(receivedString);
+      }
+      else if (receivedString == "onflash"){
+        digitalWrite(2, LOW);
+        delay(200);
+        digitalWrite(2, HIGH);           
+        Serial.println(receivedString);
+      }
+      else if (receivedString == "offflash"){
+        digitalWrite(2, LOW);
+        delay(200);
+        digitalWrite(2, HIGH);           
+        Serial.println(receivedString);
+      }
+      else if (receivedString == "onrescue"){
+        digitalWrite(2, LOW);
+        delay(200);
+        digitalWrite(2, HIGH);           
+        Serial.println(receivedString);
+      }
+      else if (receivedString == "offrescue"){
+        digitalWrite(2, LOW);
+        delay(200);
+        digitalWrite(2, HIGH);           
+        Serial.println(receivedString);
+      }
       // 清空接收的字符串
       receivedString = "";
     }
