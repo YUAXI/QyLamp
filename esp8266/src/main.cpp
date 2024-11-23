@@ -1,5 +1,12 @@
 #include <Arduino.h>
 #include <SoftwareSerial.h>
+#include <Adafruit_NeoPixel.h>
+#define PIN        15 
+#define NUMPIXELS 9
+Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
+
+#define DELAYVAL 500 // Time (in milliseconds) to pause between pixels
+
 
 SoftwareSerial mySerial(4, 5); // RX, TX  分别接到GPIO4和GPIO5
 
@@ -10,6 +17,9 @@ void setup() {
   Serial.begin(9600);         // 调试串口初始化
   pinMode(2, OUTPUT);         // 设置GPIO2为输出模式
   digitalWrite(2, HIGH);      // 初始状态为高电平
+  #if defined(__AVR_ATtiny85__) && (F_CPU == 16000000)
+  #endif
+  pixels.begin();
 }
 
 void loop() {
@@ -33,64 +43,126 @@ void loop() {
       else if (receivedString == "on"){
         digitalWrite(2, LOW);         
         Serial.println(receivedString);
+
+        pixels.clear(); 
+        for(int i=0; i<NUMPIXELS; i++) {
+          pixels.setPixelColor(i, pixels.Color(255, 239, 158));
+          pixels.show();
+        }
       }
       else if (receivedString == "off"){
         digitalWrite(2, HIGH);        
         Serial.println(receivedString);
+        pixels.clear(); 
+        pixels.show();
       }
       else if (receivedString == "red"){
         digitalWrite(2, LOW);
         delay(200);
         digitalWrite(2, HIGH);               
         Serial.println(receivedString);
+
+        pixels.clear(); 
+        for(int i=0; i<NUMPIXELS; i++) {
+          pixels.setPixelColor(i, pixels.Color(255, 0, 0));
+          pixels.show();
+        }
       }
       else if (receivedString == "orange"){
         digitalWrite(2, LOW);
         delay(200);
         digitalWrite(2, HIGH);                 
         Serial.println(receivedString);
+
+        pixels.clear(); 
+        for(int i=0; i<NUMPIXELS; i++) {
+          pixels.setPixelColor(i, pixels.Color(255, 136, 0));
+          pixels.show();
+        }
       }
       else if (receivedString == "yellow"){
         digitalWrite(2, LOW);
         delay(200);
         digitalWrite(2, HIGH);           
         Serial.println(receivedString);
+
+        pixels.clear(); 
+        for(int i=0; i<NUMPIXELS; i++) {
+          pixels.setPixelColor(i, pixels.Color(225, 255, 0));
+          pixels.show();
+        }
       }
       else if (receivedString == "green"){
         digitalWrite(2, LOW);
         delay(200);
         digitalWrite(2, HIGH);           
         Serial.println(receivedString);
+
+        pixels.clear(); 
+        for(int i=0; i<NUMPIXELS; i++) {
+          pixels.setPixelColor(i, pixels.Color(0, 255, 0));
+          pixels.show();
+        }
       }
     else if (receivedString == "cyan"){
         digitalWrite(2, LOW);
         delay(200);
         digitalWrite(2, HIGH);           
         Serial.println(receivedString);
+
+        pixels.clear(); 
+        for(int i=0; i<NUMPIXELS; i++) {
+          pixels.setPixelColor(i, pixels.Color(0,255,255));
+          pixels.show();
+        }
       }
       else if (receivedString == "blue"){
         digitalWrite(2, LOW);
         delay(200);
         digitalWrite(2, HIGH);           
         Serial.println(receivedString);
+
+        pixels.clear(); 
+        for(int i=0; i<NUMPIXELS; i++) {
+          pixels.setPixelColor(i, pixels.Color(0,0,255));
+          pixels.show();
+        }
       }
       else if (receivedString == "purple"){
         digitalWrite(2, LOW);
         delay(200);
         digitalWrite(2, HIGH);           
         Serial.println(receivedString);
+
+        pixels.clear(); 
+        for(int i=0; i<NUMPIXELS; i++) {
+          pixels.setPixelColor(i, pixels.Color(212, 0, 255));
+          pixels.show();
+        }
       }
       else if (receivedString == "white"){
         digitalWrite(2, LOW);
         delay(200);
         digitalWrite(2, HIGH);           
         Serial.println(receivedString);
+
+        pixels.clear(); 
+        for(int i=0; i<NUMPIXELS; i++) {
+          pixels.setPixelColor(i, pixels.Color(255, 255, 255));
+          pixels.show();
+        }
       }
       else if (receivedString == "pink"){
         digitalWrite(2, LOW);
         delay(200);
         digitalWrite(2, HIGH);           
         Serial.println(receivedString);
+
+        pixels.clear(); 
+        for(int i=0; i<NUMPIXELS; i++) {
+          pixels.setPixelColor(i, pixels.Color(255, 128, 166));
+          pixels.show();
+        }
       }
       else if (receivedString == "darker"){
         digitalWrite(2, LOW);
@@ -139,6 +211,7 @@ void loop() {
         delay(200);
         digitalWrite(2, HIGH);           
         Serial.println(receivedString);
+
       }
       else if (receivedString == "onrescue"){
         digitalWrite(2, LOW);
