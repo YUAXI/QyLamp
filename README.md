@@ -20,10 +20,6 @@
 
 ![](img/rendering.png)
 
-## 结构
-
-
-
 ## 注意
 
 **Releases**中仅提供esp8266的单机版固件，请自行下载asrpro源码在[天问Block](http://www.twen51.com/new/twen51/index.php)中生成模型并编译上传，如需联网需求也请自行下载esp8266源码修改[巴法](https://cloud.bemfa.com/)私钥、主题以及WiFi信息，二次开发请注明我的**GitHub**仓库链接，谢谢合作！
